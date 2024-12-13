@@ -2,7 +2,7 @@
 title: "Coup-Proofing via Capital Relocation"
 subtitle: "DSAN 6750 / PPOL 6805: GIS for Spatial Data Science"
 authors:
-  - name: Jeff Jacobs
+  - name: Gabriel Soto
     email: jj1088@georgetown.edu
     affiliation: Georgetown University
     corresponding: true
