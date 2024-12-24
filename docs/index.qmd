@@ -2,7 +2,7 @@
 title: "Coup-Proofing via Capital Relocation"
 subtitle: "DSAN 6750 / PPOL 6805: GIS for Spatial Data Science"
 authors:
-  - name: Jeff Jacobs
+  - name: Gabriel Soto
     email: jj1088@georgetown.edu
     affiliation: Georgetown University
     corresponding: true
@@ -66,11 +66,6 @@ library(units) |> suppressPackageStartupMessages()
 cb_palette <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 ```
 
-```{r}
-#| label: load-eda
-merged_long_sf <- readRDS("merged_long_sf.rds")
-mapview(merged_long_sf, zcol="name", cex=4, label="geounit")
-```
 
 We then construct an **area-normalized** measure of capital-centroid distance $\text{dist}^{\textsf{AN}}$, using the formula
 
@@ -82,24 +77,24 @@ A plot of this measure by country looks as follows:
 
 ```{r}
 #| label: plot-area
-merged_area_sf <- readRDS("merged_area_sf.rds")
-mapview(merged_area_sf, zcol="scaled_dist")
+#merged_area_sf <- readRDS("merged_area_sf.rds")
+#mapview(merged_area_sf, zcol="scaled_dist")
 ```
 
 ## Hypothesis Testing (Regression)
 
 ```{r}
 #| label: plot-regression
-merged_sub_sf <- readRDS("merged_sub_sf.rds")
-merged_sub_sf |> head()
+#merged_sub_sf <- readRDS("merged_sub_sf.rds")
+#merged_sub_sf |> head()
 ```
 
 ```{r}
-merged_sub_sf |> ggplot(aes(x=scaled_dist, y=total_score, label=NAME_ENGLI)) +
-  geom_point() +
-  geom_smooth(method='lm', formula= y~x) +
-  geom_text(size=4, nudge_y = 0.075) +
-  theme_classic()
+#merged_sub_sf |> ggplot(aes(x=scaled_dist, y=total_score, label=NAME_ENGLI)) +
+#  geom_point() +
+#  geom_smooth(method='lm', formula= y~x) +
+#  geom_text(size=4, nudge_y = 0.075) +
+#  theme_classic()
 ```
 
 ## Discussion
